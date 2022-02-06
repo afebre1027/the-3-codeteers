@@ -1,0 +1,26 @@
+{
+  "name": "the-3-codeteers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afebre1027/the-3-codeteers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/afebre1027/the-3-codeteers/issues"
+  },
+  "homepage": "https://github.com/afebre1027/the-3-codeteers#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.15.0"
+  }
+}
