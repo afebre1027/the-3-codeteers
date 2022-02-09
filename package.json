@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/afebre1027/the-3-codeteers#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
