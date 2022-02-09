@@ -2,15 +2,20 @@
   --clr-neon: hsl(115, 100%, 54%);
   --clr-bg: hsl(323 21% 16%;);
 }
+html {
+  background-color: rgb(10, 10, 10);
+}
+body {
+  color: white;
+}
 
-.body {
-  background-color: rgb(97, 97, 97);
+.label {
   color: white;
 }
 
 /* navbar section */
 .navbar {
-  background-color: black;
+  background-color: rgb(10, 10, 10);
   padding-bottom: 100px;
 }
 
@@ -32,6 +37,7 @@
   width: 50%;
   margin: auto;
   padding: 10px;
+  background: none;
 }
 
 /* footer section */
@@ -40,15 +46,40 @@
   background-color: gray;
 }
 
-article {
-  border: 1px solid black;
-}
 img {
   width: 90%;
   display: flex;
   justify-content: space-evenly;
   margin: auto;
   border: 1px solid black;
+}
+
+/* neon letters in header for lounge page */
+.neon-text {
+  margin-left: 30px;
+  font-family: cursive;
+  margin-top: 15px;
+  color: var(--clr-neon);
+  text-shadow: 0 0 7px rgb(185, 185, 185), 0 0 8px rgb(185, 185, 185),
+    0 0 9px rgb(185, 185, 185), 0 0 10px rgba(47, 255, 57, 0.795),
+    0 0 11px rgba(47, 255, 57, 0.795), 0 0 12px rgba(47, 255, 57, 0.795),
+    0 0 13px rgba(47, 255, 57, 0.795), 0 0 14px rgba(47, 255, 57, 0.795);
+
+  animation: flicker 5s infinite alternate;
+  color: var(--clr-neon);
+}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53% {
+    text-shadow: 0 0 4px rgb(207, 207, 207), 0 0 8px rgb(207, 207, 207),
+      0 0 12px rgb(207, 207, 207), 0 0 16px rgb(0, 155, 52),
+      0 0 20px rgb(0, 155, 52), 0 0 24px rgb(0, 155, 52),
+      0 0 28px rgb(0, 155, 52), 0 0 32px rgb(0, 155, 52);
+  }
 }
 
 /* neon buttons */
@@ -105,4 +136,85 @@ img {
 }
 
 /* lounge boarder neon */
+.block {
+  position: relative;
+  margin: 10% auto 0;
+  width: 50%;
+  height: 400px;
+  background-image: url(https://i.pinimg.com/564x/38/bf/ae/38bfae02bee35bf0db05e69c8e354420.jpg);
+}
+.glow::before,
+.glow::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: -5px;
+  background: linear-gradient(
+    45deg,
+    yellow,
+    #ff6600,
+    #00ff66,
+    #00ffff,
+    #ff00ff,
+    #ff0099,
+    #6e0dd0,
+    #ff3300,
+    #099fff
+  );
+  background-size: 400%;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  z-index: -1;
+  animation: animate 40s linear infinite;
+}
 
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.glow::after {
+  filter: blur(2em);
+}
+
+/* lounge page media information section */
+.media {
+  margin: auto;
+  display: flex;
+  width: 75%;
+}
+
+.textarea {
+  margin: auto;
+  min-width: 80%;
+  max-width: 100%;
+}
+
+/* media queries  */
+@media only screen and (max-width: 425px) {
+  header {
+    display: flex;
+    flex-direction: row;
+  }
+  .neon-text {
+    font-size: 1.655rem;
+  }
+  .neon-button {
+    font-size: 1rem;
+  }
+  .block {
+    width: 90%;
+  }
+  .textarea {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
