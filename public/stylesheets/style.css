@@ -9,6 +9,10 @@ body {
   color: white;
 }
 
+.label {
+  color: white;
+}
+
 /* navbar section */
 .navbar {
   background-color: rgb(10, 10, 10);
@@ -33,6 +37,7 @@ body {
   width: 50%;
   margin: auto;
   padding: 10px;
+  background: none;
 }
 
 /* footer section */
@@ -60,7 +65,7 @@ img {
     0 0 11px rgba(47, 255, 57, 0.795), 0 0 12px rgba(47, 255, 57, 0.795),
     0 0 13px rgba(47, 255, 57, 0.795), 0 0 14px rgba(47, 255, 57, 0.795);
 
-  animation: flicker 1.5s infinite alternate;
+  animation: flicker 5s infinite alternate;
   color: var(--clr-neon);
 }
 
@@ -69,17 +74,11 @@ img {
   18%,
   22%,
   25%,
-  53%,
-  57%,
-  100% {
-    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa,
-      0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
-  }
-
-  20%,
-  24%,
-  55% {
-    text-shadow: none;
+  53% {
+    text-shadow: 0 0 4px rgb(207, 207, 207), 0 0 8px rgb(207, 207, 207),
+      0 0 12px rgb(207, 207, 207), 0 0 16px rgb(0, 155, 52),
+      0 0 20px rgb(0, 155, 52), 0 0 24px rgb(0, 155, 52),
+      0 0 28px rgb(0, 155, 52), 0 0 32px rgb(0, 155, 52);
   }
 }
 
@@ -194,6 +193,28 @@ img {
 
 .textarea {
   margin: auto;
-  min-width: 50%;
-  max-width: 80%;
+  min-width: 80%;
+  max-width: 100%;
+}
+
+/* media queries  */
+@media only screen and (max-width: 425px) {
+  header {
+    display: flex;
+    flex-direction: row;
+  }
+  .neon-text {
+    font-size: 1.655rem;
+  }
+  .neon-button {
+    font-size: 1rem;
+  }
+  .block {
+    width: 90%;
+  }
+  .textarea {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
 }
