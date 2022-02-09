@@ -4,7 +4,8 @@
 }
 
 .body {
-  background-color: aquamarine;
+  background-color: rgb(97, 97, 97);
+  color: white;
 }
 
 /* navbar section */
@@ -102,3 +103,6 @@ img {
 .neon-button:hover::after {
   opacity: 1;
 }
+
+/* lounge boarder neon */
+
