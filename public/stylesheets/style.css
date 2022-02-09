@@ -218,3 +218,12 @@ img {
     padding: 0;
   }
 }
+
+.column {
+  border: 1px solid white;
+  margin: 10px;
+}
+
+li {
+  margin-left: 12px;
+}
