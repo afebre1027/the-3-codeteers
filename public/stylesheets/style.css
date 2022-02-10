@@ -60,7 +60,7 @@ img {
   margin-left: 30px;
   font-family: cursive;
   margin-top: 15px;
-  color: var(--clr-neon);
+  color: black;
   text-shadow: 0 0 7px rgb(185, 185, 185), 0 0 8px rgb(185, 185, 185),
     0 0 9px rgb(185, 185, 185), 0 0 10px rgba(47, 255, 57, 0.795),
     0 0 11px rgba(47, 255, 57, 0.795), 0 0 12px rgba(47, 255, 57, 0.795),
@@ -109,7 +109,7 @@ img {
   width: 100%;
   height: 100%;
 
-  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.3);
   filter: blur(1.3em);
 }
 
@@ -138,10 +138,11 @@ img {
 
 /* lounge scoreboard and user information */
 .column {
-  margin: 20px;
+  margin: 1%;
 }
 
 .columns h2 {
+  margin-top: 1rem;
   text-align: center;
   font-size: 1.4rem;
   border-bottom: 3px solid hsl(27, 100%, 50%);
@@ -153,7 +154,7 @@ img {
 .leaderBoard {
   text-align: center;
   font-size: 1.4rem;
-  border: 3px solid hsl(27, 100%, 50%);
+  border: 3px solid white;
   border-radius: 0.5em;
   width: auto;
 
@@ -193,9 +194,11 @@ li::before {
   width: 50%;
   height: 400px;
   background-image: url(https://i.pinimg.com/564x/38/bf/ae/38bfae02bee35bf0db05e69c8e354420.jpg);
+  border-radius: 0.5em;
 }
 .glow::before,
 .glow::after {
+  border-radius: 0.5em;
   content: "";
   position: absolute;
   left: -5px;
@@ -232,7 +235,7 @@ li::before {
 }
 
 .glow::after {
-  filter: blur(2em);
+  filter: blur(1em);
 }
 
 /* lounge page media information section */
