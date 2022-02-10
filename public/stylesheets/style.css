@@ -1,9 +1,10 @@
 :root {
-  --clr-neon: hsl(115, 100%, 54%);
+  --clr-neon: rgb(20, 255, 243);
   --clr-bg: hsl(323 21% 16%;);
 }
 html {
-  background-color: rgb(10, 10, 10);
+  /* background-color: rgb(10, 10, 10); */
+  background-image: url(./0e6ac009562c2fec4f0360e0dc939337.jpg);
 }
 body {
   color: white;
@@ -13,74 +14,76 @@ body {
   color: white;
 }
 
-/* navbar section */
-.navbar {
-  background-color: rgb(10, 10, 10);
-  padding-bottom: 70px;
-  margin-bottom: 55px;
-}
-
-.main-title {
-  color: white;
-  font-size: 3rem;
-  text-transform: uppercase;
-  text-align: center;
+.neon-text {
   font-family: "Times New Roman", Times, serif;
-}
-
-/* hero section */
-.hero {
-  margin-bottom: 10px;
-}
-
-/* login & signup boxes */
-.box {
-  width: 50%;
-  margin: auto;
-  padding: 10px;
-  background: none;
-}
-
-/* footer section */
-.footer {
-  margin-top: 100px;
-  background-color: gray;
-}
-
-img {
-  width: 90%;
+  min-height: 100%;
   display: flex;
-  justify-content: space-evenly;
-  margin: auto;
-  border: 1px solid black;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 3rem;
+  text-align: center;
+  line-height: 1;
+  color: #c6e2ff;
+  animation: neon 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.92),
+      0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(30, 132, 242, 0.52),
+      0 0 21px rgba(30, 132, 242, 0.92), 0 0 34px rgba(30, 132, 242, 0.78),
+      0 0 54px rgba(30, 132, 242, 0.92);
+  }
+  to {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.98),
+      0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(30, 132, 242, 0.58),
+      0 0 22px rgba(30, 132, 242, 0.84), 0 0 38px rgba(30, 132, 242, 0.88),
+      0 0 60px rgba(30, 132, 242, 1);
+  }
 }
 
 /* neon letters in header*/
-.neon-text {
+/* .neon-text {
   margin-left: 30px;
-  font-family: cursive;
   margin-top: 15px;
-  color: black;
   text-shadow: 0 0 7px rgb(185, 185, 185), 0 0 8px rgb(185, 185, 185),
     0 0 9px rgb(185, 185, 185), 0 0 10px rgba(47, 255, 57, 0.795),
     0 0 11px rgba(47, 255, 57, 0.795), 0 0 12px rgba(47, 255, 57, 0.795),
     0 0 13px rgba(47, 255, 57, 0.795), 0 0 14px rgba(47, 255, 57, 0.795);
 
-  animation: flicker 5s infinite alternate;
+  animation: flicker 4s infinite alternate;
   color: var(--clr-neon);
 }
 
 @keyframes flicker {
-  0%,
-  18%,
-  22%,
-  25%,
+  52%,
+  53%,
+  52%,
   53% {
     text-shadow: 0 0 4px rgb(207, 207, 207), 0 0 8px rgb(207, 207, 207),
       0 0 12px rgb(207, 207, 207), 0 0 16px rgb(0, 155, 52),
       0 0 20px rgb(0, 155, 52), 0 0 24px rgb(0, 155, 52),
       0 0 28px rgb(0, 155, 52), 0 0 32px rgb(0, 155, 52);
   }
+}
+
+.neon-text {
+  margin-top: 40px;
+  transform-origin: 0 0;
+  transform: rotate(-2deg);
+} */
+
+/* navbar section */
+.navbar {
+  background-image: url("https://www.dropbox.com/s/2ct0i6kc61vp0bh/wall.jpg?raw=1");
+  padding-bottom: 70px;
+  margin-bottom: 55px;
+}
+
+a.navbar-item:hover {
+  color: white;
 }
 
 /* neon buttons */
@@ -136,6 +139,33 @@ img {
   opacity: 1;
 }
 
+/* hero section */
+.hero {
+  margin-bottom: 10px;
+}
+
+/* login & signup boxes */
+.box {
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+  background: none;
+}
+
+/* footer section */
+.footer {
+  margin-top: 100px;
+  background-color: gray;
+}
+
+img {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+  border: 1px solid black;
+}
+
 /* lounge scoreboard and user information */
 .column {
   margin: 1%;
@@ -145,9 +175,12 @@ img {
   margin-top: 1rem;
   text-align: center;
   font-size: 1.4rem;
-  border-bottom: 3px solid hsl(27, 100%, 50%);
-  border-top: 3px solid hsl(27, 100%, 50%);
+  border-bottom: 3px solid white;
+  border-top: 3px solid white;
   border-radius: 0.5em;
+
+  box-shadow: inset 0 0 0.5em 0 hsl(27, 100%, 50%),
+    inset 0 0 0.7em 0 hsl(27, 100%, 50%), 0 0 0.5em 0 hsl(27, 100%, 50%);
 }
 
 .userProfile,
@@ -242,13 +275,32 @@ li::before {
 .media {
   margin: auto;
   display: flex;
-  width: 75%;
+  width: 60%;
 }
 
 .textarea {
   margin: auto;
   min-width: 80%;
   max-width: 100%;
+}
+
+.media strong {
+  color: rgb(0, 0, 97);
+  text-shadow: 0 0 0.25em rgb(255, 255, 255), 0 0 0.5em white;
+}
+
+.media + .media,
+.media {
+  text-shadow: 0 0 0.125em rgb(240, 110, 4), 0 0 0.45em currentColor;
+}
+.media + .media {
+  border-top: 0.15rem solid white;
+  padding-top: 1.2rem;
+  padding-bottom: 1rem;
+  border-radius: 0.1rem;
+}
+.media::after {
+  filter: blur(0.1rem);
 }
 
 /* media queries  */
