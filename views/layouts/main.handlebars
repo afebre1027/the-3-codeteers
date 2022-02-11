@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+
+  {{#if loggedIn}}
+  <title>Game Page</title>
+  {{else}}
+  <title>Login Page</title>
+  {{/if}}
+</head>
+
+<body class="body">
+  <header>
+    <!-- nav bar image on leftside -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        {{#if loggedIn}}
+        <a class="navbar-item main-title neon-text" href="./login.html">Lounge & Chill
+        </a>
+        {{else}}
+        <a class="navbar-item main-title neon-text" href="./login.html">Welcome to Game night
+        </a>
+        {{/if}}
+      </div>
+
+      <!-- start game and logOut top right -->
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class=" neon-button">
+              {{#if loggedIn}}
+              <strong>Start Game</strong>
+              {{else}}
+              <strong>Sign up</strong>
+              {{/if}}
+            </a>
+            {{#if loggedIn}}
+            <a class=" neon-button" id="logout">
+              LogOut
+            </a>
+            {{else}}
+            <a class=" neon-button">
+              Login
+            </a>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+      </div>
+    </nav>
+  </header>  
+  {{{body}}}
+  {{!-- ADD IN THE SCRIPT HERE --}}
+ 
+  
