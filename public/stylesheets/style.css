@@ -15,7 +15,7 @@ body {
 }
 
 .neon-text {
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Supermercado One', cursive;
   min-height: 100%;
   display: flex;
   flex-direction: column;
