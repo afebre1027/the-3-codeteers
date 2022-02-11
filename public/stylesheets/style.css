@@ -3,9 +3,9 @@
   --clr-bg: hsl(323 21% 16%;);
 }
 html {
-  /* background-color: rgb(10, 10, 10); */
-  background-image: url(./0e6ac009562c2fec4f0360e0dc939337.jpg);
+  background-image: url(./wall.jpg);
 }
+
 body {
   color: white;
 }
@@ -14,70 +14,9 @@ body {
   color: white;
 }
 
-.neon-text {
-  font-family: 'Supermercado One', cursive;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 3rem;
-  text-align: center;
-  line-height: 1;
-  color: #c6e2ff;
-  animation: neon 0.5s ease-in-out infinite alternate;
-}
-
-@keyframes neon {
-  from {
-    text-shadow: 0 0 6px rgba(202, 228, 225, 0.92),
-      0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(30, 132, 242, 0.52),
-      0 0 21px rgba(30, 132, 242, 0.92), 0 0 34px rgba(30, 132, 242, 0.78),
-      0 0 54px rgba(30, 132, 242, 0.92);
-  }
-  to {
-    text-shadow: 0 0 6px rgba(202, 228, 225, 0.98),
-      0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(30, 132, 242, 0.58),
-      0 0 22px rgba(30, 132, 242, 0.84), 0 0 38px rgba(30, 132, 242, 0.88),
-      0 0 60px rgba(30, 132, 242, 1);
-  }
-}
-
-/* neon letters in header*/
-/* .neon-text {
-  margin-left: 30px;
-  margin-top: 15px;
-  text-shadow: 0 0 7px rgb(185, 185, 185), 0 0 8px rgb(185, 185, 185),
-    0 0 9px rgb(185, 185, 185), 0 0 10px rgba(47, 255, 57, 0.795),
-    0 0 11px rgba(47, 255, 57, 0.795), 0 0 12px rgba(47, 255, 57, 0.795),
-    0 0 13px rgba(47, 255, 57, 0.795), 0 0 14px rgba(47, 255, 57, 0.795);
-
-  animation: flicker 4s infinite alternate;
-  color: var(--clr-neon);
-}
-
-@keyframes flicker {
-  52%,
-  53%,
-  52%,
-  53% {
-    text-shadow: 0 0 4px rgb(207, 207, 207), 0 0 8px rgb(207, 207, 207),
-      0 0 12px rgb(207, 207, 207), 0 0 16px rgb(0, 155, 52),
-      0 0 20px rgb(0, 155, 52), 0 0 24px rgb(0, 155, 52),
-      0 0 28px rgb(0, 155, 52), 0 0 32px rgb(0, 155, 52);
-  }
-}
-
-.neon-text {
-  margin-top: 40px;
-  transform-origin: 0 0;
-  transform: rotate(-2deg);
-} */
-
 /* navbar section */
 .navbar {
-  background-image: url("https://www.dropbox.com/s/2ct0i6kc61vp0bh/wall.jpg?raw=1");
+  background-image: url(./wall.jpg);
   padding-bottom: 70px;
   margin-bottom: 55px;
 }
@@ -227,6 +166,9 @@ li::before {
   width: 50%;
   height: 400px;
   background-image: url(https://i.pinimg.com/564x/38/bf/ae/38bfae02bee35bf0db05e69c8e354420.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   border-radius: 0.5em;
 }
 .glow::before,
