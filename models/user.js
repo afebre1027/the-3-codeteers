@@ -35,6 +35,9 @@ User.init(
             validate:{
                 len: [6]
             }
+        },
+        info:{
+            type: DataTypes.STRING(100),           
         }
     },
     {

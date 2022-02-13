@@ -1,5 +1,5 @@
 :root {
-  --clr-neon: rgb(20, 255, 243);
+  --clr-neon: hsla(198.90191698515062, 100%, 80%, 1);
   --clr-bg: hsl(323 21% 16%;);
 }
 html {
@@ -244,6 +244,7 @@ li::before {
 .media::after {
   filter: blur(0.1rem);
 }
+
 
 /* media queries  */
 @media only screen and (max-width: 425px) {
