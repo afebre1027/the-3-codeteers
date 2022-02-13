@@ -43,7 +43,7 @@ a.navbar-item:hover {
 }
 
 .neon-button::before {
-  content: "";
+  content: '';
   position: absolute;
   background: var(--clr-neon);
   top: 120%;
@@ -56,7 +56,7 @@ a.navbar-item:hover {
 }
 
 .neon-button::after {
-  content: "";
+  content: '';
   top: 0;
   left: 0;
   right: 0;
@@ -174,7 +174,7 @@ li::before {
 .glow::before,
 .glow::after {
   border-radius: 0.5em;
-  content: "";
+  content: '';
   position: absolute;
   left: -5px;
   top: -5px;
@@ -194,10 +194,10 @@ li::before {
   width: calc(100% + 10px);
   height: calc(100% + 10px);
   z-index: -1;
-  animation: animate 40s linear infinite;
+  /* animation: animate 40s linear infinite; */
 }
 
-@keyframes animate {
+/* @keyframes animate {
   0% {
     background-position: 0 0;
   }
@@ -207,7 +207,7 @@ li::before {
   100% {
     background-position: 0 0;
   }
-}
+} */
 
 .glow::after {
   filter: blur(1em);
