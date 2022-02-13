@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
     })
 
     if (response.ok) {
-      document.location.replace('/dashboard')
+      document.location.replace('/gamepage')
     } else {
       alert(response.statusText)
     }
@@ -49,9 +49,9 @@ async function signupFormHandler(event) {
 }
 
 document
-  .querySelector('.login-form')
+  .querySelector('#login-form')
   .addEventListener('submit', loginFormHandler)
 
 document
-  .querySelector('.signup-form')
+  .querySelector('#signup-form')
   .addEventListener('submit', signupFormHandler)
