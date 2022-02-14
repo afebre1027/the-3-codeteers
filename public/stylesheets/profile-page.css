@@ -1,0 +1,16 @@
+.tile {
+  width: auto;
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
+.box {
+    border: 3px solid white;
+}
+.profile-titles {
+    font-family: "Supermercado One", cursive;
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+
+}

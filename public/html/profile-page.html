@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="../stylesheets/style.css">
   <link rel="stylesheet" href="../stylesheets/bigNeon.css">
+  <link rel="stylesheet" href="../stylesheets/profile-page.css">
   <title>Home Page</title>
 </head>
 
@@ -40,36 +41,54 @@
     </nav>
 
   </header>
-
-  <div class="column userProfile">
-    <h2 class="column">Username</h2>
-    <div class="userStats">
-      <h4 class="column">Email</h4>
-      
-       
-        <h4 class="column">info</h4>
+  <!-- beginning of tiles -->
+  <div class="tile is-ancestor">
+    <div class="tile is-4 is-vertical is-parent">
+      <div class="tile is-child box">
+        <p class="profile-titles">username</p>
+        <p class="profile-titles">email</p>
+      </div>
+      <div class="tile is-child box">
+        <p class="profile-titles">information</p>
         <article class="media">
-            <div class="media-content">
+          <div class="media-content">
             <button class="button" id="editBtn" onclick="switchDisplay()">Edit Info</button>
-             <form id="profileEdit" style="display: none;"> 
-                <div class="field">
-                  <p class="control">
-                    <textarea class="textarea" placeholder="What should people know? (100 Characters max)"></textarea>
-                  </p>
-                </div>
-                <div class="field">
-                  <p class="control">
-                    <button class="button">Save Edit</button>
-                  </p>
-                </div>
-              </form> 
-            </div>
-          </article>     
-        <h4 class="column">recent scores</h4>
-        <h4 class="column">recent post</h4>  
+            <form id="profileEdit" style="display: none;">
+              <div class="field">
+                <p class="control">
+                  <textarea class="textarea" placeholder="What should people know? (100 Characters max)"></textarea>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <button class="button">Save Edit</button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <div class="tile is-child box">
+        <p class="profile-titles">recent posts</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
+          felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit
+          amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
+        <p class="profile-titles">recent scores</p>
+        <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum,
+          nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas
+          imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim
+          turpis. Sed eget varius ligula, at volutpat tortor.</p>
+          <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum,
+            nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas
+            imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim
+            turpis. Sed eget varius ligula, at volutpat tortor.</p>
+      </div>
     </div>
   </div>
 
   <script src="../javascript/edit-info.js"></script>
 </body>
+
 </html>
