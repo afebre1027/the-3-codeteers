@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <link rel="stylesheet" href="../stylesheets/bigNeon.css">
+  <title>Home Page</title>
+</head>
+
+<body class="body">
+  <header>
+    <!-- nav bar image on leftside -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="./login.html"></a>
+        <div class="subtitle">lounge and chill</div>
+      </div>
+
+      <!-- start game and logOut top right -->
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class=" neon-button">
+              <strong>Start Game</strong>
+            </a>
+            <a class=" neon-button" id="logout">
+              LogOut
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <div class="column userProfile">
+    <h2 class="column">Username</h2>
+    <div class="userStats">
+      <h4 class="column">Email</h4>
+      
+       
+        <h4 class="column">info</h4>
+        <article class="media">
+            <div class="media-content">
+            <button class="button" id="editBtn" onclick="switchDisplay()">Edit Info</button>
+             <form id="profileEdit" style="display: none;"> 
+                <div class="field">
+                  <p class="control">
+                    <textarea class="textarea" placeholder="What should people know? (100 Characters max)"></textarea>
+                  </p>
+                </div>
+                <div class="field">
+                  <p class="control">
+                    <button class="button">Save Edit</button>
+                  </p>
+                </div>
+              </form> 
+            </div>
+          </article>     
+        <h4 class="column">recent scores</h4>
+        <h4 class="column">recent post</h4>  
+    </div>
+  </div>
+
+  <script src="../javascript/edit-info.js"></script>
+</body>
+</html>

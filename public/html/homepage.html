@@ -5,9 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="../stylesheets/style.css">
-  <title>Home Page</title>
+  <link rel="stylesheet" href="../stylesheets/bigNeon.css">
+  <link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet">
+  <title setupEvents();>Home Page</title>
 </head>
 
 <body class="body">
@@ -15,8 +20,8 @@
     <!-- nav bar image on leftside -->
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item main-title neon-text" href="./login.html">Lounge & Chill
-        </a>
+        <a class="navbar-item" href="./login.html"></a>
+        <div class="subtitle">lounge and chill</div>
       </div>
 
       <!-- start game and logOut top right -->
@@ -26,7 +31,7 @@
             <a class=" neon-button">
               <strong>Start Game</strong>
             </a>
-            <a class=" neon-button" href="./login.html">
+            <a class=" neon-button" id="logout">
               LogOut
             </a>
           </div>
@@ -51,7 +56,7 @@
     </div>
 
     <!-- main display section -->
-    <div class="column block glow is-three-fifths"> Game could be placed here.</div>
+    <div class="column block glow is-three-fifths"></div>
 
     <!-- high score section -->
     <div class="column leaderBoard">
@@ -72,7 +77,6 @@
   </div>
   <!-- comment section -->
   <article class="media">
-
     <div class="media-content">
       <div class="content">
         <p>
@@ -87,7 +91,6 @@
   </article>
   <article class="media">
 
-    </figure>
     <div class="media-content">
       <div class="content">
         <p>

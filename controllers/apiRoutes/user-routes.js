@@ -19,21 +19,21 @@ router.get('/:id', (req, res)=>{
             id: req.params.id
         },
         include:[
-            {
-                model: Post,
-                attributes:['id', 
-                            'title', 
-                            'post_text',
-                            'created_at']
-            },
+            // {
+            //     model: Post,
+            //     attributes:['id', 
+            //                 'title', 
+            //                 'post_text',
+            //                 'created_at']
+            // },
             {
                 model: Comment,
                 attributes: ['id',
                              'comment_text',
                              'created_at'],
                 include:{
-                    model: Post,
-                    attributes: ['title']
+                    model: User,
+                    attributes: ['username']
                 }
             }
         ]
@@ -109,6 +109,26 @@ router.post('/logout', (req, res)=>{
     } else {
         res.status(404).end();
     }
+});
+
+router.put('/:id', (req, res)=>{
+    User.update(
+        {
+            info: req.body.info
+        },
+        {
+            where:{
+                id: req.params.id
+            }
+        }
+    )
+    .then(dbUserData => {
+        res.json(dbUserData);
+    })
+    .catch(err =>{
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 router.delete('/:id', (req, res)=>{

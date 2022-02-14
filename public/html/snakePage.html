@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/gamePage.css">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/bigNeon.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="arcade-machine">
+            <div class="shadow"></div>
+            <div class="top">
+                <div class="stripes">leaderBoard</div>
+            </div>
+            <div class="screen-container">
+                <div class="shadow"></div>
+                <div class="screen">
+                    <div class="screen-display">
+                        <canvas id="bird" width="auto" style="z-index: 3;" height="480"></canvas>
+                        <script src="../javascript/game.js"></script>                    </div>
+                </div>
+                <div class="joystick">
+                    <div class="stick"></div>
+                </div>
+                <div class="board">
+                    <div class="button button-a"></div>
+                    <div class="button button-b"></div>
+                    <div class="button button-c"></div>
+                </div>
+                <div class="bottom"></div>
+            </div>
+            <div class="comment-container"></div>
+        </div>
+    </div>
+</body>
+
+</html>
