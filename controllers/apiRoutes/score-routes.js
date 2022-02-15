@@ -1,18 +1,18 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const {User, Time} = require('../../models');
+const {User, Score} = require('../../models');
 
 router.get('/', (req, res)=>{
-    Time.findAll({
+    Score.findAll({
         limit: 10,
-        attributes:['id', 'time'],
-        order:[['time']],
+        attributes:['id', 'game_score', 'game'],
+        order:[['game_score']],
         include:[{
             model: User,
             attributes:['username']
         }]
     })
-    .then(dbTimeData => res.json(dbTimeData))
+    .then(dbScoreData => res.json(dbScoreData))
     .catch(err =>{
         console.log(err);
         res.status(500).json(err);
@@ -20,10 +20,10 @@ router.get('/', (req, res)=>{
 });
 
 router.get('/:id', (req, res)=>{
-    Time.findAll({
+    Score.findAll({
         limit: 10,
-        attributes:['id', 'time'],
-        order:[['time']],
+        attributes:['id', 'game_score', 'game'],
+        order:[['game_score']],
         where:{
             user_id: req.params.id
         },
@@ -32,12 +32,12 @@ router.get('/:id', (req, res)=>{
             attributes:['username']
         }]
     })
-    .then(dbTimeData=>{
-        if(!dbTimeData){
+    .then(dbScoreData=>{
+        if(!dbScoreData){
             res.status(404).json({message: 'No post found with that id.'});
             return;
         }
-        res.json(dbTimeData);
+        res.json(dbScoreData);
     })
     .catch(err =>{
         console.log(err);
@@ -46,11 +46,12 @@ router.get('/:id', (req, res)=>{
 });
 
 router.post('/', (req, res)=>{
-    Time.create({
-        time: req.body.time,
-        user_id: req.session.user_id
+    Score.create({
+        game_score: req.body.score,
+        user_id: req.session.user_id,
+        game: req.body.game
     })
-    .then(dbTimeData => res.json(dbTimeData))
+    .then(dbScoreData => res.json(dbScoreData))
     .catch(err=>{
         console.log(err);
         res.status(500).json(err);

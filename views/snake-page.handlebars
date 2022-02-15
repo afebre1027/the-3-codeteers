@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="/stylesheets/gamePage.css">
+<title>Snake!</title>
+</head>
+
+<body>
+    <header>
+        <!-- nav bar image on leftside -->
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/gamepage"></a>
+                <div class="subtitle">Classic Snake</div>
+            </div>
+
+            <!-- start game and logOut top right -->
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class=" neon-button" href="/gamepage">
+                            <strong>LOUNGE</strong>
+                        </a>
+                        <a class=" neon-button" id="logout">
+                            LogOut
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="container">
+        <div class="arcade-machine">
+            <div class="shadow"></div>
+            <div class="top"></div>
+            <div class="stripes">
+                <div class="snake-leaderboard">
+                    <h2 class="">Leader Board</h2>
+                    <ol class="">
+                        <li>2:30</li>
+                        <li>2:30</li>
+                        <li>2:30</li>
+                        <li>2:30</li>
+                        <li>2:30</li>
+                        <li>2:30</li>
+                        <li>2:30</li>
+                        <li>2:30</li>
+                        <li>2:30</li>
+                        <li>2:30</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="screen-container">
+                <div class="shadow"></div>
+                <div class="screen">
+                    <div class="screen-display">
+                        <canvas id="snake" width="600" height="600"></canvas>
+                        <script src="/javascript/snek.js"></script>
+                    </div>
+                </div>
+                <div class="joystick">
+                    <div class="stick"></div>
+                </div>
+                <div class="board">
+                    <div class="button button-a"></div>
+                    <div class="button button-b"></div>
+                    <div class="button button-c"></div>
+                </div>
+                <div class="bottom"></div>
+            </div>
+            <div class="comment-container">
+                {{#each comments as |comment|}}
+                {{>comment-section comment}}
+                {{/each}}
+
+
+                <article class="media">
+
+                    <div class="media-content">
+                        <form id="commentForm">
+                            <div class="field">
+                                <p class="control">
+                                    <textarea class="textarea" name="comment_text" placeholder="Add a comment..."></textarea>
+                                </p>
+                            </div>
+                            <div class="field">
+                                <p class="control">
+                                    <button class="post-button" type="submit">Post comment</button>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    <script src="/javascript/comment.js"></script>
+    <script src="/javascript/logout.js"></script>
+</body>
+
+</html>

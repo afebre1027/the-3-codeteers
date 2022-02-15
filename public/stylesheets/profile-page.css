@@ -11,6 +11,10 @@
 .tile p {
   color: white;
 }
+
+.tile span{
+  color: #c6e2ff;
+}
 .profile-titles {
   font-family: "Supermercado One", cursive;
   font-size: 40px;

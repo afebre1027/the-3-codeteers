@@ -45,7 +45,7 @@ function setUpEvents() {
           clickX <= startBtn.x + startBtn.w &&
           clickY >= startBtn.y &&
           clickY <= startBtn.y + startBtn.h
-        ) {
+        ) {    
           pipes.reset();
           bird.speedReset();
           score.reset();
