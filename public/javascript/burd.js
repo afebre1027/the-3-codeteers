@@ -363,7 +363,7 @@ function setUpEvents() {
           this.position.shift();
           score.value += 1;
           score.best = Math.max(score.value, score.best);
-          localStorage.setItem('best', score.best);
+          document.cookie = `best=${localStorage.getItem('best')}`;
         }
       }
     },
