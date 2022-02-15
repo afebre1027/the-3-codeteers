@@ -182,7 +182,7 @@ function play() {
     state.game = 'over';
     clearInterval(play);
     score.best = Math.max(score.value, score.best);
-    localStorage.setItem('snake', score.best);
+    document.cookie = `best=${localStorage.getItem('best')}`;
     score.reset();
     endGame();
   }
