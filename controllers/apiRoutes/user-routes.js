@@ -31,7 +31,7 @@ router.get('/:id', (req, res)=>{
             },
             {
                 model: Score,
-                attributes:['id', 'score', 'game']
+                attributes:['id', 'game_score', 'game']
             }
         ]
     })

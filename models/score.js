@@ -13,7 +13,7 @@ Score.init(
 
         game_score:{
             type: DataTypes.INTEGER,
-            allowNull: false,
+            // allowNull: false,
         },
 
         game:{
