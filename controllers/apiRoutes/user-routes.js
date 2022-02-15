@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User, Post, Comment} = require('../../models');
+const {User, Post, Comment, Score} = require('../../models');
 
 router.get('/', (req, res)=>{
     User.findAll({
@@ -19,13 +19,6 @@ router.get('/:id', (req, res)=>{
             id: req.params.id
         },
         include:[
-            // {
-            //     model: Post,
-            //     attributes:['id', 
-            //                 'title', 
-            //                 'post_text',
-            //                 'created_at']
-            // },
             {
                 model: Comment,
                 attributes: ['id',
@@ -35,6 +28,10 @@ router.get('/:id', (req, res)=>{
                     model: User,
                     attributes: ['username']
                 }
+            },
+            {
+                model: Score,
+                attributes:['id', 'score', 'game']
             }
         ]
     })
@@ -111,14 +108,14 @@ router.post('/logout', (req, res)=>{
     }
 });
 
-router.put('/:id', (req, res)=>{
+router.put('/:username', (req, res)=>{
     User.update(
         {
             info: req.body.info
         },
         {
             where:{
-                id: req.params.id
+                username: req.params.username
             }
         }
     )
