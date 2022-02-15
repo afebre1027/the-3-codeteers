@@ -111,6 +111,20 @@ function getDirection(event) {
   }
 }
 
+window.addEventListener(
+  'keydown',
+  function (e) {
+    if (
+      ['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].indexOf(
+        e.code
+      ) > -1
+    ) {
+      e.preventDefault();
+    }
+  },
+  false
+);
+
 function collision(head, array) {
   for (let i = 0; i < array.length; i++) {
     if (head.x == array[i].x && head.y == array[i].y) {
