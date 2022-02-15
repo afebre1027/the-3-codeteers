@@ -56,7 +56,15 @@
     </div>
 
     <!-- main display section -->
-    <div class="column block glow is-three-fifths"></div>
+    <div><canvas id="bird" class='column' width="320" style="z-index: 3;"
+        height="480"></canvas>
+      <script src="../javascript/game.js"></script>
+      <div class="buttons">
+        <a class=" neon-button">
+          <strong>submit to leaderboard</strong>
+        </a>
+      </div>
+    </div>
 
     <!-- high score section -->
     <div class="column leaderBoard">

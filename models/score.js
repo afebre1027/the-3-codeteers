@@ -1,9 +1,9 @@
 const {Model, DataTypes}= require('sequelize')
 const sequelize = require('../config/connection')
 
-class Time extends Model {}
+class Score extends Model {}
 
-Time.init(
+Score.init(
     {
         id:{
             type: DataTypes.INTEGER,
@@ -11,9 +11,14 @@ Time.init(
             autoIncrement: true
         },
 
-        time:{
-            type: DataTypes.TIME(3),
-            allowNull: false,
+        game_score:{
+            type: DataTypes.INTEGER,
+            // allowNull: false,
+        },
+
+        game:{
+            type: DataTypes.STRING,
+            allowNull:false,
         },
 
         user_id:{
@@ -29,8 +34,8 @@ Time.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'time'
+        modelName: 'score'
     }
 );
 
-module.exports = Time;
+module.exports = Score;

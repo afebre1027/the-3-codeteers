@@ -1,21 +1,9 @@
 const router = require('express').Router();
 
 const sequelize = require('../config/connection');
-const{Post, User, Comment, Time} =require('../models');
+const{Post, User, Comment, Score} =require('../models');
 const withAuth = require('../utils/auth')
 
-// router.get('/', (req,res)=>{
-//     if(req.session.loggedIn){
-//         res.render('game-page', {
-//             username: req.session.username,
-//             email:req.session.email,
-//             loggedIn: req.session.loggedIn
-//         });
-//         console.log('made it this far');
-//         return;
-//     }
-//     res.render('login');
-// })
 
 router.get('/', withAuth, (req,res)=>{
     Promise.all([
@@ -32,8 +20,8 @@ router.get('/', withAuth, (req,res)=>{
             //                     'created_at']
             //     },
             //     {
-            //         model: Time,
-            //         attributes:['time'],
+            //         model: Score,
+            //         attributes:['Score'],
             //         limit:5,
             //         order:['created_at', 'DESC']
             //     }
@@ -41,6 +29,9 @@ router.get('/', withAuth, (req,res)=>{
         }),
 
         Comment.findAll({
+            where:{
+                type: 'general'
+            },
             attributes: ['comment_text', 'created_at'],
             include:[
                 {
@@ -51,41 +42,81 @@ router.get('/', withAuth, (req,res)=>{
             order:[['created_at', 'DESC']]
         }),
 
-        Time.findAll({
-            attributes:['time'],
-            limit: 10,
-            order:['time'],
-            include:{
-                model:User,
-                attributes:['username']
-            }
-        })
+        // Score.findAll({
+        //     attributes:['Score'],
+        //     limit: 10,
+        //     order:['Score'],
+        //     include:{
+        //         model:User,
+        //         attributes:['username']
+        //     }
+        // })
     ])
     .then(dbUserData =>{
         const user=dbUserData[0].get({plain:true});
         const comments =dbUserData[1].map(comment=>comment.get({plain:true}));
-        const times = dbUserData[2].map(time=>time.get({plain: true}));
+        // const Scores = dbUserData[2].map(Score=>Score.get({plain: true}));
 
         res.render('game-page', {
         user,
         comments,
-        times,
+        // Scores,
         loggedIn: req.session.loggedIn});
     });
     
 });
 
-// router.get('/', withAuth, (req,res)=>{
-    
-//     .then(dbCommentData =>{
-//         const comments = dbCommentData.map(comment=>comment.get({plain:true}));
-//         res.render('game-page', {
-//             comments,
-//             loggedIn: req.session.loggedIn
-//         });
-//     });
-// });
+router.get('/floppy', (req,res)=>{
+    Promise.all([
+        Comment.findAll({
+            where:{
+                type: 'floppy'
+            },
+            attributes: ['comment_text', 'created_at'],
+            include:[
+                {
+                    model: User,
+                    attributes: ['username']
+                }
+            ],
+            order:[['created_at', 'DESC']]
+        })
+    ])
+    .then(dbGameData =>{
+        const comments = dbGameData[0].map(comment=>comment.get({plain: true}));
 
+        res.render('flappy-page', {
+            comments,
+            loggedIn: req.session.loggedIn
+        });
+    });
+});
+
+router.get('/snake', (req,res)=>{
+    Promise.all([
+        Comment.findAll({
+            where:{
+                type: 'snake'
+            },
+            attributes: ['comment_text', 'created_at'],
+            include:[
+                {
+                    model: User,
+                    attributes: ['username']
+                }
+            ],
+            order:[['created_at', 'DESC']]
+        })
+    ])
+    .then(dbGameData =>{
+        const comments = dbGameData[0].map(comment=>comment.get({plain: true}));
+
+        res.render('snake-page', {
+            comments,
+            loggedIn: req.session.loggedIn
+        });
+    });
+});
 
 
 module.exports=router;

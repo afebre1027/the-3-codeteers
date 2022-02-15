@@ -45,11 +45,11 @@
   <div class="tile is-ancestor">
     <div class="tile is-4 is-vertical is-parent">
       <div class="tile is-child box">
-        <h2 class="profile-titles">username</h2>
-        <h2 class="profile-titles">email</h2>
+        <h2 class="profile-titles">Username: {{user.username}}</h2>
+        <h2 class="profile-titles">Email: {{user.email}}</h2>
       </div>
       <div class="tile is-child box">
-        <p class="profile-titles">information</p>
+        <p class="profile-titles">Information: {{user.info}}</p>
         <article class="media">
           <div class="media-content">
             <button class="button" id="editBtn" onclick="switchDisplay()">Edit Info</button>
@@ -71,10 +71,10 @@
     </div>
     <div class="tile is-parent">
       <div class="tile is-child box">
-        <h2 class="profile-titles">recent posts</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
-          felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit
-          amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
+        <h2 class="profile-titles">Recent Comments</h2>
+        {{#each user.comments as |comment|}}
+        <p>{{comment_text}} <span>Created on {{format_date created_at}}</span></p>
+        {{/each}}
         <h2 class="profile-titles">recent scores</h2>
         <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum,
           nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas
@@ -88,7 +88,7 @@
     </div>
   </div>
 
-  <script src="../javascript/edit-info.js"></script>
+  <script src="/javascript/edit-info.js"></script>
 </body>
 
 </html>

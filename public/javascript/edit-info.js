@@ -1,3 +1,13 @@
+function sameUser(){
+    const username = document.querySelector('.subtitle').innerHTML;
+    const loggedInUser = document.querySelector('#Username').innerHTML;
+    const editBtn = document.getElementById("editBtn");
+
+    if(username !== loggedInUser){
+        editBtn.style.display = 'none';
+    };
+};
+
 function switchDisplay(){
     const formDisplay = document.getElementById("profileEdit");
     const editBtn = document.getElementById("editBtn");
@@ -16,9 +26,9 @@ async function editInfoHandler(event){
 
     const info = document.querySelector('#infoText').value.trim();
 
-    const id = document.querySelector('#uId').innerHTML;
+    const username = document.querySelector('.subtitle').innerHTML;
 
-    const response = await fetch(`/api/users/${id}`, {
+    const response = await fetch(`/api/users/${username}`, {
         method: 'PUT',
         body: JSON.stringify({
             info,
@@ -35,5 +45,5 @@ async function editInfoHandler(event){
     }
 }
 
-
+sameUser();
 document.querySelector('#profileEdit').addEventListener('submit', editInfoHandler);

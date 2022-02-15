@@ -1,36 +1,54 @@
 {{>profile-header user}}
-<div class="column userProfile">
-    <h2 class="column">Username: {{user.username}}</h2>
-    <div class="userStats">
-      <h4 class="column">Email: {{user.email}}</h4>      
-        <h4 class="column">Info: {{user.info}}</h4>
+<div class="tile is-ancestor">
+    <div class="tile is-4 is-vertical is-parent">
+      <div class="tile is-child box">
+        <h2 class="profile-titles">Username: {{user.username}}</h2>
+        <h2 class="profile-titles">Email: {{user.email}}</h2>
+      </div>
+      <div class="tile is-child box">
+        <p class="profile-titles">Information: {{user.info}}</p>
         <article class="media">
-            <div class="media-content">
+          <div class="media-content">
             <button class="button" id="editBtn" onclick="switchDisplay()">Edit Info</button>
-             <form id="profileEdit" style="display: none;"> 
-                <div class="field">
-                  <p class="control">
-                    <textarea class="textarea" id="infoText" maxlength="100" placeholder="What should people know? (100 Characters max)"></textarea>
-                  </p>
-                </div>
-                <div class="field">
-                  <p class="control">
-                    <button class="button" type="submit">Save Edit</button>
-                  </p>
-                </div>
-              </form> 
-            </div>
-          </article>     
-        <h4 class="column">recent scores</h4>
-        <h4 class="column">recent post</h4>
+            <form id="profileEdit" style="display: none;">
+              <div class="field">
+                <p class="control">
+                  <textarea class="textarea" id="infoText" placeholder="What should people know? (100 Characters max)"></textarea>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <button class="button" type="submit">Save Edit</button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <div class="tile is-child box">
+        <h2 class="profile-titles">Recent Comments</h2>
         {{#each user.comments as |comment|}}
-        {{>profile-comments comment}}
-        {{/each}}  
+        <p>{{comment_text}} <span>Created on {{format_date created_at}} In {{type}} chat</span></p>
+        <br>
+        {{/each}}
+        <p style="display:none;" id="Username">{{username}}</p>
+        <h2 class="profile-titles">recent scores</h2>
+        <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum,
+          nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas
+          imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim
+          turpis. Sed eget varius ligula, at volutpat tortor.</p>
+          <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum,
+            nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas
+            imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim
+            turpis. Sed eget varius ligula, at volutpat tortor.</p>
+      </div>
     </div>
   </div>
-  <p style="display: none;" id="uId">{{user.id}}</p>
 
-  <script src="javascript/edit-info.js"></script>
-  <script src="javascript/logout.js"></script>
+  <script src="/javascript/edit-info.js"></script>
+  <script src="/javascript/logout.js"></script>
 </body>
+
 </html>
