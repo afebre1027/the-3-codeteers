@@ -19,10 +19,8 @@
     <!-- high score section -->
     <div class="column leaderBoard">
       <h2 class="column">Leader Board</h2>
-      <ol class="column">
-        {{#each times as |time|}}
-        <li>{{time.user.username}}: {{time.time}}</li>
-        {{/each}}
+      <ol id="topScores" class="column">
+        
       </ol>
     </div>
   </div>
@@ -50,6 +48,7 @@
 
 <script src="javascript/logout.js"></script>
 <script src="javascript/comment.js"></script>
+<script src="javascript/gamelounge-scores.js"></script>
 </body>
 
 </html>

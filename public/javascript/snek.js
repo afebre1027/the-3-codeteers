@@ -183,6 +183,7 @@ function play() {
     clearInterval(play);
     score.best = Math.max(score.value, score.best);
     document.cookie = `best=${localStorage.getItem('best')}`;
+    // saveScore(score.value);
     score.reset();
     endGame();
   }
@@ -205,3 +206,23 @@ function loop() {
   setInterval(play, 400);
 }
 loop();
+
+var savedScores = JSON.parse(localStorage.getItem("snakehighScores")) || [];
+
+function saveScore(currentScore){
+  //captures the value of form input
+  
+  //creates object to store initials and score
+  var score= {
+      score: currentScore,
+      game: 'snake',
+  };
+
+  //pushes score to savedScore array, sorts based off of value, saves top 5 scores
+  savedScores.push(score);
+  savedScores.sort((a, b) => b.score - a.score)
+  savedScores.splice(5);
+
+  localStorage.setItem("snakehighScores", JSON.stringify(savedScores));
+  return;
+};
