@@ -1,4 +1,13 @@
 <link rel="stylesheet" href="/stylesheets/gamePage.css">
+<link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"></script>
+   <script>
+      var sound = new Howl({
+        src: '\sounds\jump.mp3',
+        format: ['mp3', 'aac']
+      }).play();
+    </script>
+  
 <title>Floppy Bird</title>
 </head>
 
@@ -55,7 +64,7 @@
                 <div class="shadow"></div>
                 <div class="screen">
                     <div class="screen-display">
-                        <canvas id="bird" width="auto" style="z-index: 3;" height="480"></canvas>
+                        <canvas onclick="sound.play()" id="bird" width="auto" style="z-index: 3;" height="480"></canvas>
                         <script src="/javascript/burd.js"></script>
                     </div>
                 </div>

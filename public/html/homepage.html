@@ -12,8 +12,11 @@
   <link rel="stylesheet" href="../stylesheets/style.css">
   <link rel="stylesheet" href="../stylesheets/bigNeon.css">
   <link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"></script>
   <title setupEvents();>Home Page</title>
 </head>
+
+
 
 <body class="body">
   <header>
@@ -44,6 +47,13 @@
   <div class="columns">
 
     <!-- user profile section -->
+    <script>
+      var sound = new Howl({
+        src: '../../sounds/jump.mp3',
+        format: ['mp3', 'aac']
+      });
+    </script>
+    sound.play();
     <div class="column userProfile">
       <h2 class="column">Username</h2>
       <div class="userStats">
@@ -56,8 +66,7 @@
     </div>
 
     <!-- main display section -->
-    <div><canvas id="bird" class='column' width="320" style="z-index: 3;"
-        height="480"></canvas>
+    <div><canvas onclick="sound.play()" id="bird" class='column' width="320" style="z-index: 3;" height="480"></canvas>
       <script src="../javascript/game.js"></script>
       <div class="buttons">
         <a class=" neon-button">
