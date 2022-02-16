@@ -7,6 +7,11 @@ function setUpEvents() {
   let frames = 0;
   const DEGREE = Math.PI / 180;
 
+  var sound = new Howl({
+    src: ['http://larry.torontocast.com:1820/stream/1/'],
+    volume: 0.1,
+  }).play();
+  sound;
   //Sprite image
   const sprite = new Image();
   sprite.src =
@@ -35,6 +40,7 @@ function setUpEvents() {
       case state.game:
         if (bird.y - bird.radius <= 0) return;
         bird.flap();
+
         break;
       case state.over:
         let rect = cvs.getBoundingClientRect();
@@ -45,7 +51,7 @@ function setUpEvents() {
           clickX <= startBtn.x + startBtn.w &&
           clickY >= startBtn.y &&
           clickY <= startBtn.y + startBtn.h
-        ) {    
+        ) {
           pipes.reset();
           bird.speedReset();
           score.reset();

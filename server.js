@@ -8,7 +8,7 @@ const routes = require('./Controllers/');
 const exphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
 const hbs = exphbs.create({ helpers });
-
+const cors = require('cors');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
@@ -28,7 +28,7 @@ app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(cors({ origin: '*' }));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {

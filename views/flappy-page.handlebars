@@ -1,18 +1,22 @@
 <link rel="stylesheet" href="/stylesheets/gamePage.css">
 <link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"></script>
-   <script>
-      var sound = new Howl({
-        src: '\sounds\jump.mp3',
-        format: ['mp3', 'aac']
-      }).play();
-    </script>
+  <script> sound = new Howl({
+    src: ['http://larry.torontocast.com:1820/stream/1/'],
+    volume: 0.01,
+    html5: true,
+    format:['mp3','aac']
+  })
+ ;</script>
+      
   
 <title>Floppy Bird</title>
 </head>
 
 <body>
     <header>
+     
+
         <!-- nav bar image on leftside -->
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
@@ -65,7 +69,7 @@
                 <div class="screen">
                     <div class="screen-display">
                         <canvas onclick="sound.play()" id="bird" width="auto" style="z-index: 3;" height="480"></canvas>
-                        <script src="/javascript/burd.js"></script>
+                        <script src="/javascript/burd.js"></>
                     </div>
                 </div>
                 <div class="joystick">
