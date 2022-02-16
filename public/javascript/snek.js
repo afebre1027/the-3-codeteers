@@ -111,6 +111,20 @@ function getDirection(event) {
   }
 }
 
+window.addEventListener(
+  'keydown',
+  function (e) {
+    if (
+      ['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].indexOf(
+        e.code
+      ) > -1
+    ) {
+      e.preventDefault();
+    }
+  },
+  false
+);
+
 function collision(head, array) {
   for (let i = 0; i < array.length; i++) {
     if (head.x == array[i].x && head.y == array[i].y) {
@@ -168,7 +182,7 @@ function play() {
     state.game = 'over';
     clearInterval(play);
     score.best = Math.max(score.value, score.best);
-    localStorage.setItem('snake', score.best);
+    document.cookie = `best=${localStorage.getItem('best')}`;
     score.reset();
     endGame();
   }

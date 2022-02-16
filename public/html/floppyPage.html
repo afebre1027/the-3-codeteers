@@ -5,131 +5,150 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="../stylesheets/floppyPage.css">
     <link rel="stylesheet" href="../stylesheets/style.css">
-    <link rel="stylesheet" href="../stylesheets/gamePage.css">
     <link rel="stylesheet" href="../stylesheets/bigNeon.css">
-    <link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet">
-    <title setupEvents();>Floppy</title>
+    <title>Floppy Bird</title>
 </head>
+
 <body>
     <header>
         <!-- nav bar image on leftside -->
         <nav class="navbar" role="navigation" aria-label="main navigation">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="./login.html"></a>
-            <div class="subtitle">Lets Get Floppying!!</div>
-          </div>
-    
-          <!-- start game and logOut top right -->
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class=" neon-button">
-                  <strong>Start Game</strong>
-                </a>
-                <a class=" neon-button" id="logout">
-                  LogOut
-                </a>
-              </div>
+            <div class="navbar-brand">
+                <a class="navbar-item" href="./homepage.html"></a>
+                <div class="subtitle">Floppy Bird</div>
             </div>
-          </div>
-          </div>
+
+            <!-- start game and logOut top right -->
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class=" neon-button" href="./homepage.html">
+                            <strong>LOUNGE</strong>
+                        </a>
+                        <a class=" neon-button" id="logout">
+                            LogOut
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
         </nav>
-    
-      </header>
 
-    <div class="arcade-container columns is-multiline">
-        <div class=""
-        <div class="column leaderBoard">
-            <div class="column floppy-Lb">
-                <h2 class="column">Leader Board</h2>
-                <ol class="column">
-                    <li>mark</li>
-                    <li>joe</li>
-                    <li>drew</li>
-                    <li>tim</li>
-                    <li>paul</li>
-                    <li>frank</li>
-                    <li>chris</li>
-                    <li>max</li>
-                    <li>jess</li>
-                    <li>ashley</li>
-                </ol>
-            </div>
-        </div>
-        <div class="">
-            <canvas id="bird" width="auto" style="z-index: 3;" height="480"></canvas>
-            <script src="../javascript/game.js"></script>
-        </div>
+    </header>
 
-    </div>
-    <div class="tile is-vertical is-clipped">
-        <!-- comment section -->
-        <article class="media">
-            <div class="media-content">
-                <div class="content">
-                    <p>
-                        <strong>Barbara Middleton</strong>
-                        <br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies
-                        elit blandit
-                        non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis.
-
-                    </p>
+    <div class="container">
+        <div class="arcade-machine">
+            <div class="shadow"></div>
+            <div class="top"></div>
+            <div class="stripes">
+                <div class="snake-leaderboard">
+                    <h2 class="">Leader Board</h2>
+                    <ol class="">
+                        <li>2:30</li>
+                        <li>2:30</li>
+                        <li>2:30</li>
+                        <li>2:30</li>
+                        <li>2:30</li>
+                        <li>2:30</li>
+                        <li>2:30</li>
+                        <li>2:30</li>
+                        <li>2:30</li>
+                        <li>2:30</li>
+                    </ol>
                 </div>
             </div>
-        </article>
-        <article class="media">
 
-            <div class="media-content">
-                <div class="content">
-                    <p>
-                        <strong>Sean Brown</strong>
-                        <br>
-                        Donec sollicitudin urna eget eros malesuada sagittis. Pellentesque habitant morbi tristique
-                        senectus et
-                        netus et malesuada fames ac turpis egestas. Aliquam blandit nisl a nulla sagittis, a lobortis
-                        leo feugiat.
-                    </p>
+            <div class="screen-container">
+                <div class="shadow"></div>
+                <div class="screen">
+                    <div class="screen-display">
+                        <canvas id="bird" width="auto" style="z-index: 3;" height="480"></canvas>
+                        <script src="../javascript/burd.js"></script>
+                        <script src="../javascript/howler.js"></script>
+                    </div>
+
                 </div>
-            </div>
-        </article>
-
-        <article class="media">
-            <div class="media-content">
-                <div class="content">
-                    <p>
-                        <strong>Kayli Eunice </strong>
-                        <br>
-                        Sed convallis scelerisque mauris, non pulvinar nunc mattis vel. Maecenas varius felis sit amet
-                        magna
-                        vestibulum euismod malesuada cursus libero. Vestibulum ante ipsum primis in faucibus orci luctus
-                        et
-                        ultrices posuere cubilia Curae; Phasellus lacinia non nisl id feugiat.
-
-                    </p>
+                <div class="joystick">
+                    <div class="stick"></div>
                 </div>
+                <div class="board">
+                    <div class="button button-a"></div>
+                    <div class="button button-b"></div>
+                    <div class="button button-c"></div>
+                </div>
+                <div class="bottom"></div>
             </div>
-        </article>
-    </div>
-    <article class="media">
+            <div class="comment-container">
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>Barbara Middleton</strong>
+                                <br>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec
+                                ultricies elit blandit
+                                non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus
+                                turpis.
 
-        <div class="media-content">
-            <div class="field">
-                <p class="control">
-                    <textarea class="textarea" placeholder="Add a comment..."></textarea>
-                </p>
-            </div>
-            <div class="field">
-                <p class="control">
-                    <button class="button">Post comment</button>
-                </p>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                <article class="media">
+
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>Sean Brown</strong>
+                                <br>
+                                Donec sollicitudin urna eget eros malesuada sagittis. Pellentesque habitant morbi
+                                tristique senectus et
+                                netus et malesuada fames ac turpis egestas. Aliquam blandit nisl a nulla sagittis, a
+                                lobortis leo feugiat.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>Kayli Eunice </strong>
+                                <br>
+                                Sed convallis scelerisque mauris, non pulvinar nunc mattis vel. Maecenas varius felis
+                                sit amet magna
+                                vestibulum euismod malesuada cursus libero. Vestibulum ante ipsum primis in faucibus
+                                orci luctus et
+                                ultrices posuere cubilia Curae; Phasellus lacinia non nisl id feugiat.
+
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="media">
+
+                    <div class="media-content">
+                        <div class="field">
+                            <p class="control">
+                                <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control">
+                                <button class="post-button">Post comment</button>
+                            </p>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
-    </article>
     </div>
 </body>
+
+</html>

@@ -1,0 +1,353 @@
+:root {
+  --clr-main: rgb(248, 240, 240);
+  --clr-back: rgb(199, 36, 177);
+}
+
+div {
+  border-radius: 5px;
+}
+div::after,
+div::before {
+  border-radius: 5px;
+}
+
+.snake-leaderboard {
+  text-align: center;
+}
+
+.snake-leaderboard ol,
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+  color: white;
+  font-size: 30px;
+  padding-right: 20px;
+}
+
+.buttons {
+  padding-top: 20px;
+  float: right;
+}
+.subtitle {
+  padding-top: 10px;
+  float: left;
+}
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+.comment-container {
+  padding-top: 5px;
+}
+
+.comments {
+  font-size: 20px;
+  width: 98%;
+  height: 98%;
+  overflow: auto;
+  position: absolute;
+  left: 2%;
+}
+textarea {
+  box-sizing: border-box;
+  width: 300px;
+  height: 100px;
+}
+
+/* arcade build starts here */
+.arcade-machine {
+  width: 900px;
+  height: 1000px;
+  position: relative;
+  margin: 200px auto;
+  perspective: 35em;
+}
+
+/* leader Board area */
+.stripes {
+  width: 86.5%;
+  height: 15%;
+  position: absolute;
+  left: 6%;
+  top: -8%;
+  border: 4px solid var(--clr-main);
+  box-shadow: 0 0 19px var(--clr-back), 0 0 30px var(--clr-back);
+}
+
+.stripes::before {
+  width: 4%;
+  height: 101%;
+  position: absolute;
+  border: 4px solid var(--clr-main);
+  content: " ";
+  left: -6%;
+  top: -3.5%;
+  box-shadow: inset 0 0 19px var(--clr-back), 0 0 19px var(--clr-back),
+    0 0 30px var(--clr-back);
+}
+.stripes::after {
+  width: 4%;
+  height: 101%;
+  position: absolute;
+  top: -3.5%;
+  border: 4px solid var(--clr-main);
+  content: " ";
+  right: -6%;
+  box-shadow: inset 0 0 19px var(--clr-back), 0 0 19px var(--clr-back),
+    0 0 30px var(--clr-back);
+}
+
+/* persecptive under leader board */
+.top {
+  width: 82.5%;
+  height: 5%;
+  position: absolute;
+  left: 8%;
+  top: 9%;
+  border: 4px solid var(--clr-main);
+  transform: perspective(50em) rotateX(150deg) scale(1, 1);
+  box-shadow: inset 0 0 19px var(--clr-back), 0 0 19px var(--clr-back),
+    0 0 30px var(--clr-back);
+  z-index: 3;
+}
+
+.top::before {
+  width: 4%;
+  height: 101%;
+  position: absolute;
+  top: -4px;
+  border: 4px solid var(--clr-main);
+  content: " ";
+  left: -6%;
+  box-shadow: inset 0 0 19px var(--clr-back), 0 0 19px var(--clr-back),
+    0 0 30px var(--clr-back);
+}
+.top::after {
+  width: 4%;
+  height: 100%;
+  position: absolute;
+  top: -4px;
+  border: 4px solid var(--clr-main);
+  content: " ";
+  right: -6%;
+  box-shadow: inset 0 0 19px var(--clr-back), 0 0 19px var(--clr-back),
+    0 0 30px var(--clr-back);
+}
+
+/* screen section */
+.screen-container {
+  width: 62%;
+  height: 480px;
+  position: absolute;
+  text-align: center;
+  left: 33.2%;
+  top: 20.5%;
+}
+.screen-container::before {
+  width: 4.5%;
+  height: 120%;
+  position: absolute;
+  top: -10%;
+  content: " ";
+  left: -44%;
+  border: 4px solid var(--clr-main);
+  box-shadow: inset 0 0 19px var(--clr-back), 0 0 19px var(--clr-back),
+    0 0 30px var(--clr-back);
+}
+.screen-container::after {
+  width: 4.5%;
+  height: 120%;
+  position: absolute;
+  top: -10%;
+  content: " ";
+  right: 2.5%;
+  border: 4px solid var(--clr-main);
+  box-shadow: inset 0 0 19px var(--clr-back), 0 0 19px var(--clr-back),
+    0 0 30px var(--clr-back);
+}
+
+.screen {
+  width: 127%;
+  height: 120%;
+  position: absolute;
+  left: -37.5%;
+  top: -10%;
+  border: 4px solid var(--clr-main);
+  box-shadow: inset 0 0 19px var(--clr-back), 0 0 19px var(--clr-back),
+    0 0 30px var(--clr-back);
+}
+.screen-display {
+  width: 100%;
+  height: 99%;
+  position: absolute;  
+  left: 0.5%;
+  top: -10%;
+  margin-top: 60px;
+}
+canvas {
+  height: 100%;
+}
+/* joystick & button area */
+
+.joystick {
+  width: 5%;
+  height: 6%;
+  position: absolute;
+  top: 105%;
+  left: -15%;
+  border-radius: 50%;
+  border: 4px solid red;
+  z-index: 2;
+}
+
+.joystick::before {
+  width: 65%;
+  height: 90%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background: red;
+  content: " ";
+  border-radius: 50%;
+}
+.stick {
+  position: absolute;
+  left: 30%;
+  top: 100%;
+  width: 40%;
+  height: 200%;
+  background: red;
+}
+
+/* actual board with button and joy stick */
+.board {
+  height: 30%;
+  width: 133%;
+  position: absolute;
+  top: 110%;
+  right: 6%;
+  border: 4px solid var(--clr-main);
+  transform: perspective(50em) rotateX(30deg) scale(1, 1);
+  box-shadow: 0 0 19px var(--clr-back), 0 0 30px var(--clr-back);
+}
+.board::before {
+  width: 4%;
+  height: 98%;
+  position: absolute;
+  top: -2%;
+  border: 4px solid var(--clr-main);
+  content: " ";
+  left: -6%;
+  box-shadow: inset 0 0 19px var(--clr-back), 0 0 19px var(--clr-back),
+    0 0 30px var(--clr-back);
+}
+.board::after {
+  width: 4%;
+  height: 98%;
+  position: absolute;
+  top: -2%;
+  border: 4px solid var(--clr-main);
+  content: " ";
+  left: 101%;
+  box-shadow: inset 0 0 19px var(--clr-back), 0 0 19px var(--clr-back),
+    0 0 30px var(--clr-back);
+}
+
+.button {
+  width: 6%;
+  height: 15%;
+  position: absolute;
+  top: 36%;
+  left: 17.5%;
+  border-radius: 50%;
+  border: 4px solid var(--clr-main);
+  box-shadow: 0 0 19px var(--clr-back), 0 0 30px var(--clr-back);
+}
+
+.button-a {
+  border: 5px solid var(--clr-main);
+  left: 50%;
+  background: rgb(224, 231, 34);
+}
+
+.button-b {
+  border: 5px solid var(--clr-main);
+  left: 60%;
+  background: rgb(219, 62, 177);
+}
+
+.button-c {
+  border: 5px solid var(--clr-main);
+  left: 70%;
+  background: rgb(68, 214, 44);
+}
+
+/* bottom panel under joystick and buttons */
+.bottom {
+  width: 140%;
+  height: 20%;
+  position: absolute;
+  right: 2.355%;
+  top: 141%;
+  border: 4px solid var(--clr-main);
+  box-shadow: 0 0 19px var(--clr-back), 0 0 30px var(--clr-back);
+}
+
+.bottom::before {
+  width: 4%;
+  height: 100%;
+  position: absolute;
+  top: -6%;
+  border: 4px solid var(--clr-main);
+  content: " ";
+  left: -6%;
+  box-shadow: inset 0 0 19px var(--clr-back), 0 0 19px var(--clr-back),
+    0 0 30px var(--clr-back);
+}
+.bottom::after {
+  width: 4%;
+  height: 100%;
+  position: absolute;
+  top: -6%;
+  border: 4px solid var(--clr-main);
+  content: " ";
+  right: -6%;
+  box-shadow: inset 0 0 19px var(--clr-back), 0 0 19px var(--clr-back),
+    0 0 30px var(--clr-back);
+}
+
+/* bottom of console for the commit section */
+.comment-container {
+  width: 80%;
+  height: 70%;
+  position: absolute;
+  top: 99%;
+  left: 9%;
+  border: 4px solid var(--clr-main);
+  box-shadow: 0 0 19px var(--clr-back), 0 0 30px var(--clr-back);
+}
+.comment-container::before {
+  width: 3%;
+  height: 100%;
+  position: absolute;
+  top: -0.5%;
+  border: 4px solid var(--clr-main);
+  content: " ";
+  left: -5%;
+  box-shadow: inset 0 0 19px var(--clr-back), 0 0 19px var(--clr-back),
+    0 0 30px var(--clr-back);
+}
+.comment-container::after {
+  width: 3%;
+  height: 100%;
+  position: absolute;
+  top: -0.5%;
+  border: 4px solid var(--clr-main);
+  content: " ";
+  right: -5%;
+  box-shadow: inset 0 0 19px var(--clr-back), 0 0 19px var(--clr-back),
+    0 0 30px var(--clr-back);
+}
