@@ -453,7 +453,7 @@ function saveScore(currentScore){
   //pushes score to savedScore array, sorts based off of value, saves top 5 scores
   savedScores.push(score);
   savedScores.sort((a, b) => b.score - a.score)
-  savedScores.splice(10);
+  savedScores.splice(5);
 
   localStorage.setItem("floppyhighScores", JSON.stringify(savedScores));
 };

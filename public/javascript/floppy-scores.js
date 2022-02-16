@@ -5,7 +5,7 @@ function loadScores (){
     var savedScores = highScores;
 
     //iterates through savesScores array
-    for(var i = 0; i < 5; i++){
+    for(var i = 0; i < savedScores.length; i++){
         //creates list element
         var top5Scores = document.createElement("li");
 

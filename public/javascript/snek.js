@@ -183,7 +183,7 @@ function play() {
     clearInterval(play);
     score.best = Math.max(score.value, score.best);
     document.cookie = `best=${localStorage.getItem('best')}`;
-    // saveScore(score.value);
+    saveScore(score.value);
     score.reset();
     endGame();
   }

@@ -1,5 +1,5 @@
 var topScores = document.getElementById("topScores");
-var highScores = JSON.parse(localStorage.getItem("floppyhighScores")) || [];
+var highScores = JSON.parse(localStorage.getItem("snakehighScores")) || [];
 
 function loadScores (){
     var savedScores = highScores;
