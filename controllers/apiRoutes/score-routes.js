@@ -58,4 +58,18 @@ router.post('/', (req, res)=>{
     });
 });
 
+router.delete('/', (req, res)=>{
+    Score.destroy({
+        where:{
+            user_id:req.session.user_id,
+            game:req.body.game
+        }
+    })
+    .then(dbScoreData => res.json(dbScoreData))
+    .catch(err =>{
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 module.exports=router;

@@ -63,10 +63,10 @@ router.get('/', withAuth, (req,res)=>{
         // Scores,
         loggedIn: req.session.loggedIn});
     });
-    
+    console.log('Cookies: ', req.cookies);
 });
 
-router.get('/floppy', (req,res)=>{
+router.get('/floppy', withAuth, (req,res)=>{
     Promise.all([
         Comment.findAll({
             where:{
@@ -80,19 +80,29 @@ router.get('/floppy', (req,res)=>{
                 }
             ],
             order:[['created_at', 'DESC']]
-        })
+        }),
+
+        User.findOne({
+            where: {
+                id: req.session.user_id
+            },
+            attributes:{exclude:['password']}
+        }),
     ])
     .then(dbGameData =>{
         const comments = dbGameData[0].map(comment=>comment.get({plain: true}));
+        const user = dbGameData[1].get({plain: true});
 
         res.render('flappy-page', {
             comments,
+            user,
             loggedIn: req.session.loggedIn
         });
     });
+    console.log('Cookies: ', req.cookies);
 });
 
-router.get('/snake', (req,res)=>{
+router.get('/snake', withAuth, (req,res)=>{
     Promise.all([
         Comment.findAll({
             where:{
@@ -106,13 +116,22 @@ router.get('/snake', (req,res)=>{
                 }
             ],
             order:[['created_at', 'DESC']]
-        })
+        }),
+
+        User.findOne({
+            where: {
+                id: req.session.user_id
+            },
+            attributes:{exclude:['password']}
+        }),
     ])
     .then(dbGameData =>{
         const comments = dbGameData[0].map(comment=>comment.get({plain: true}));
+        const user = dbGameData[1].get({plain:true});
 
         res.render('snake-page', {
             comments,
+            user,
             loggedIn: req.session.loggedIn
         });
     });

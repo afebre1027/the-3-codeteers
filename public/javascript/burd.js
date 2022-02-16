@@ -51,7 +51,8 @@ function setUpEvents() {
           clickX <= startBtn.x + startBtn.w &&
           clickY >= startBtn.y &&
           clickY <= startBtn.y + startBtn.h
-        ) {
+        ) {    
+          saveScore(score.value);
           pipes.reset();
           bird.speedReset();
           score.reset();
@@ -369,7 +370,7 @@ function setUpEvents() {
           this.position.shift();
           score.value += 1;
           score.best = Math.max(score.value, score.best);
-          document.cookie = `best=${localStorage.getItem('best')}`;
+          localStorage.setItem('best', score.best);
         }
       }
     },
@@ -436,7 +437,27 @@ function setUpEvents() {
     requestAnimationFrame(loop);
   }
   loop();
-}
+};
+
+var savedScores = JSON.parse(localStorage.getItem("floppyhighScores")) || [];
+
+function saveScore(currentScore){
+  //captures the value of form input
+  
+  //creates object to store initials and score
+  var score= {
+      score: currentScore,
+      game: 'floppy',
+  };
+  
+  //pushes score to savedScore array, sorts based off of value, saves top 5 scores
+  savedScores.push(score);
+  savedScores.sort((a, b) => b.score - a.score)
+  savedScores.splice(10);
+
+  localStorage.setItem("floppyhighScores", JSON.stringify(savedScores));
+};
+
 
 window.onload = function () {
   setUpEvents();

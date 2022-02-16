@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="/stylesheets/gamePage.css">
+
+<link rel="stylesheet" href="/stylesheets/floppyPage.css">
 <link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"></script>
   <script> sound = new Howl({
@@ -8,7 +9,7 @@
     format:['mp3','aac']
   });
  </script>
-      
+
 <title>Floppy Bird</title>
 </head>
 
@@ -47,18 +48,9 @@
             <div class="top"></div>
             <div class="stripes">
                 <div class="snake-leaderboard">
-                    <h2 class="">Leader Board</h2>
-                    <ol class="">
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
+                    <h2 class="">{{user.username}}</h2>
+                    <ol id="topScores"class="">
+                        
                     </ol>
                 </div>
             </div>
@@ -109,6 +101,7 @@
     </div>
     <script src="/javascript/comment.js"></script>
     <script src="/javascript/logout.js"></script>
+    <script src="/javascript/floppy-scores.js"></script>
 </body>
 
 </html>
