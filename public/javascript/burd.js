@@ -7,11 +7,11 @@ function setUpEvents() {
   let frames = 0;
   const DEGREE = Math.PI / 180;
 
-  var sound = new Howl({
-    src: ['http://larry.torontocast.com:1820/stream/1/'],
-    volume: 0.1,
-  }).play();
-  sound;
+    // var sound = new Howl({
+    //   src: ['http://larry.torontocast.com:1820/stream/1/'],
+    //   volume: 0.1,
+    // }).play();
+    // sound;
   //Sprite image
   const sprite = new Image();
   sprite.src =
