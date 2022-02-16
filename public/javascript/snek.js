@@ -13,8 +13,8 @@ let food = {
   y: Math.floor(Math.random() * 15 + 3) * box,
 };
 const startBtn = {
-  x: 267,
-  y: 272,
+  x: 250,
+  y: 252,
   w: 83,
   h: 29,
 };
@@ -184,7 +184,6 @@ function play() {
     score.best = Math.max(score.value, score.best);
     document.cookie = `best=${localStorage.getItem('best')}`;
     saveScore(score.value);
-    score.reset();
     endGame();
   }
 
@@ -198,6 +197,7 @@ function play() {
 
 function endGame() {
   ctx.drawImage(ground, 0, 0);
+
   gameOver.draw();
   score.draw();
   score.onClick();
@@ -207,22 +207,22 @@ function loop() {
 }
 loop();
 
-var savedScores = JSON.parse(localStorage.getItem("snakehighScores")) || [];
+var savedScores = JSON.parse(localStorage.getItem('snakehighScores')) || [];
 
-function saveScore(currentScore){
+function saveScore(currentScore) {
   //captures the value of form input
-  
+
   //creates object to store initials and score
-  var score= {
-      score: currentScore,
-      game: 'snake',
+  var score = {
+    score: currentScore,
+    game: 'snake',
   };
 
   //pushes score to savedScore array, sorts based off of value, saves top 5 scores
   savedScores.push(score);
-  savedScores.sort((a, b) => b.score - a.score)
+  savedScores.sort((a, b) => b.score - a.score);
   savedScores.splice(5);
 
-  localStorage.setItem("snakehighScores", JSON.stringify(savedScores));
+  localStorage.setItem('snakehighScores', JSON.stringify(savedScores));
   return;
-};
+}
