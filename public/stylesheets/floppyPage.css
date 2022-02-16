@@ -30,7 +30,6 @@ li {
 .buttons {
   padding-top: 20px;
   float: right;
-  
 }
 .subtitle {
   padding-top: 10px;
@@ -42,7 +41,6 @@ a:-webkit-any-link {
 
 .comment-container {
   padding-top: 5px;
-
 }
 
 .comments {
@@ -54,9 +52,9 @@ a:-webkit-any-link {
   left: 2%;
 }
 textarea {
- box-sizing: border-box;
- width: 300px;
- height: 100px;
+  box-sizing: border-box;
+  width: 300px;
+  height: 100px;
 }
 
 /* arcade build starts here */
