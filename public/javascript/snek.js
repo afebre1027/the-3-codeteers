@@ -57,7 +57,6 @@ const score = {
         clickY <= startBtn.y + startBtn.h
       ) {
         saveScore(score.value);
-        console.log('butt');
         score.reset();
         state.game = 'play';
         snake = [];
@@ -198,7 +197,6 @@ function play() {
 }
 
 function endGame() {
-  console.log('pee');
   ctx.drawImage(ground, 0, 0);
   gameOver.draw();
   score.draw();
@@ -213,7 +211,7 @@ var savedScores = JSON.parse(localStorage.getItem('snakehighScores')) || [];
 
 function saveScore(currentScore) {
   //captures the value of form input
-  console.log('hi');
+
   //creates object to store initials and score
   var score = {
     score: currentScore,
