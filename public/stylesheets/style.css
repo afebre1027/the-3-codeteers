@@ -16,6 +16,7 @@ body {
   border-radius: 50%;
   width: auto;
   color: white;
+  height: auto;
 }
 
 .label {
