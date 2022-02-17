@@ -1,4 +1,3 @@
-
 const PORT = process.env.PORT || 3001;
 const express = require('express');
 const sequelize = require('./config/connection');
@@ -8,9 +7,8 @@ const session = require('express-session');
 const routes = require('./Controllers/');
 const exphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
-const hbs = exphbs.create({helpers});
-var cookieParser = require('cookie-parser');
-
+const hbs = exphbs.create({ helpers });
+const cors = require('cors');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
@@ -30,6 +28,8 @@ app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(cors({ origin: '*' }));
 
 app.use(routes);
 

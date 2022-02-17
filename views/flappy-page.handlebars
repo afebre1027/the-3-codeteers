@@ -1,9 +1,14 @@
+
 <link rel="stylesheet" href="/stylesheets/floppyPage.css">
+<link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet">
+  
 <title>Floppy Bird</title>
 </head>
 
 <body>
     <header>
+     
+
         <!-- nav bar image on leftside -->
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
@@ -35,18 +40,9 @@
             <div class="top"></div>
             <div class="stripes">
                 <div class="snake-leaderboard">
-                    <h2 class="">Leader Board</h2>
-                    <ol class="">
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
+                    <h2 class="">{{user.username}}</h2>
+                    <ol id="topScores"class="">
+                        
                     </ol>
                 </div>
             </div>
@@ -97,6 +93,6 @@
     </div>
     <script src="/javascript/comment.js"></script>
     <script src="/javascript/logout.js"></script>
-</body>
+    <script src="/javascript/floppy-scores.js"></script>
 
 </html>

@@ -8,8 +8,8 @@
         <h4 class="column">Email: {{user.email}}</h4>
         <h4 class="column">Info: {{user.info}}</h4>
         <h4 class="column">recent scores</h4>
-        <h4 class="column">recent post</h4>
-        <h4 class="column">music npm here</h4>
+        <h4 class="column">recent post</h4>        
+<button class='btn' id="player"><i class="fa fa-play"></i> Play Chill Radio</button>
       </div>
     </div>
 
@@ -19,10 +19,8 @@
     <!-- high score section -->
     <div class="column leaderBoard">
       <h2 class="column">Leader Board</h2>
-      <ol class="column">
-        {{#each times as |time|}}
-        <li>{{time.user.username}}: {{time.time}}</li>
-        {{/each}}
+      <ol id="topScores" class="column">
+        
       </ol>
     </div>
   </div>
@@ -50,6 +48,8 @@
 
 <script src="javascript/logout.js"></script>
 <script src="javascript/comment.js"></script>
+<script src="javascript/musicplayer.js"></script>
+
 </body>
 
 </html>

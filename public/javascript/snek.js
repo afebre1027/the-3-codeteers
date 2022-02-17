@@ -1,4 +1,5 @@
 const cvs = document.getElementById('snake');
+let myInterval;
 const ctx = cvs.getContext('2d');
 const box = 32;
 const state = { game: 'play' };
@@ -13,8 +14,8 @@ let food = {
   y: Math.floor(Math.random() * 15 + 3) * box,
 };
 const startBtn = {
-  x: 267,
-  y: 272,
+  x: 250,
+  y: 252,
   w: 83,
   h: 29,
 };
@@ -55,6 +56,7 @@ const score = {
         clickY >= startBtn.y &&
         clickY <= startBtn.y + startBtn.h
       ) {
+        saveScore(score.value);
         score.reset();
         state.game = 'play';
         snake = [];
@@ -180,10 +182,9 @@ function play() {
     snakeY > 18 * box
   ) {
     state.game = 'over';
-    clearInterval(play);
+    clearInterval(myInterval);
     score.best = Math.max(score.value, score.best);
     document.cookie = `best=${localStorage.getItem('best')}`;
-    score.reset();
     endGame();
   }
 
@@ -202,6 +203,26 @@ function endGame() {
   score.onClick();
 }
 function loop() {
-  setInterval(play, 400);
+  myInterval = setInterval(play, 400);
 }
 loop();
+
+var savedScores = JSON.parse(localStorage.getItem('snakehighScores')) || [];
+
+function saveScore(currentScore) {
+  //captures the value of form input
+
+  //creates object to store initials and score
+  var score = {
+    score: currentScore,
+    game: 'snake',
+  };
+
+  //pushes score to savedScore array, sorts based off of value, saves top 5 scores
+  savedScores.push(score);
+  savedScores.sort((a, b) => b.score - a.score);
+  savedScores.splice(5);
+
+  localStorage.setItem('snakehighScores', JSON.stringify(savedScores));
+  return;
+}

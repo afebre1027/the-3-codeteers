@@ -12,8 +12,18 @@
   <link rel="stylesheet" href="../stylesheets/style.css">
   <link rel="stylesheet" href="../stylesheets/bigNeon.css">
   <link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet">
+
+  <script>
+    var sound = new Howl({
+      src: '../../sounds/jump.mp3',
+      format: ['mp3', 'aac']
+    });
+  </script>
+
   <title setupEvents();>Home Page</title>
 </head>
+
+
 
 <body class="body">
   <header>
@@ -44,20 +54,19 @@
   <div class="columns">
 
     <!-- user profile section -->
+
+
     <div class="column userProfile">
-      <h2 class="column">Username</h2>
       <div class="userStats">
-        <h4 class="column">Email</h4>
-        <h4 class="column">info</h4>
-        <h4 class="column">recent scores</h4>
-        <h4 class="column">recent post</h4>
-        <h4 class="column">music npm here</h4>
+        <button class="column">music npm here</button>
       </div>
     </div>
 
     <!-- main display section -->
-    <div><canvas id="bird" class='column' width="320" style="z-index: 3;"
+
+    <div class><canvas id="bird" class='column' width="320" style="z-index: 3;"
         height="480"></canvas>
+
       <script src="../javascript/game.js"></script>
       <div class="buttons">
         <a class=" neon-button">
@@ -68,19 +77,6 @@
 
     <!-- high score section -->
     <div class="column leaderBoard">
-      <h2 class="column">Leader Board</h2>
-      <ol class="column">
-        <li>mark</li>
-        <li>joe</li>
-        <li>drew</li>
-        <li>tim</li>
-        <li>paul</li>
-        <li>frank</li>
-        <li>chris</li>
-        <li>max</li>
-        <li>jess</li>
-        <li>ashley</li>
-      </ol>
     </div>
   </div>
   <!-- comment section -->

@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/stylesheets/snakePage.css">
+<link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet" />
 <title>Snake!</title>
 </head>
 
@@ -35,18 +36,9 @@
             <div class="top"></div>
             <div class="stripes">
                 <div class="snake-leaderboard">
-                    <h2 class="">Leader Board</h2>
-                    <ol class="">
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
-                        <li>2:30</li>
+                    <h2 class="">{{user.username}}</h2>
+                    <ol id="topScores" class="">
+ 
                     </ol>
                 </div>
             </div>
@@ -57,6 +49,22 @@
                     <div class="screen-display">
                         <canvas id="snake" width="600" height="600"></canvas>
                         <script src="/javascript/snek.js"></script>
+                         <script type="text/javascript">
+        function getMousePosition(canvas, event) {
+            let rect = canvas.getBoundingClientRect();
+            let x = event.clientX - rect.left;
+            let y = event.clientY - rect.top;
+            console.log("Coordinate x: " + x, 
+                        "Coordinate y: " + y);
+        }
+      
+        let canvasElem = document.querySelector("canvas");
+          
+        canvasElem.addEventListener("mousedown", function(e)
+        {
+            getMousePosition(canvasElem, e);
+        });
+    </script>
                     </div>
                 </div>
                 <div class="joystick">
@@ -97,6 +105,7 @@
     </div>
     <script src="/javascript/comment.js"></script>
     <script src="/javascript/logout.js"></script>
+    <script src="/javascript/snake-scores.js"></script>
 </body>
 
 </html>
