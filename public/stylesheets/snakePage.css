@@ -13,8 +13,16 @@ div::before {
 
 .snake-leaderboard {
   text-align: center;
+  background-color: hsla(305, 100%, 50%, 0.308);
+  height: 100%;
 }
-
+.snake-leaderboard h2 {
+  color: white;
+  font-size: 40px;
+  font-family: "Monoton", cursive;
+  text-shadow: 0 0 5px rgb(239, 5, 247);
+  margin-top: 0;
+}
 .snake-leaderboard ol,
 li {
   display: flex;
@@ -23,8 +31,10 @@ li {
   align-items: center;
 
   color: white;
-  font-size: 30px;
+  font-size: 35px;
   padding-right: 20px;
+
+  text-shadow: 0 0 5px rgb(63, 1, 63);
 }
 
 .buttons {

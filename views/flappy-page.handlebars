@@ -66,9 +66,11 @@
                 <div class="bottom"></div>
             </div>
             <div class="comment-container">
-                {{#each comments as |comment|}}
-                {{>comment-section comment}}
-                {{/each}}
+                <div class="comments">
+                    {{#each comments as |comment|}}
+                    {{>comment-section comment}}
+                    {{/each}}
+                
 
 
                 <article class="media">
@@ -88,6 +90,7 @@
                         </form>
                     </div>
                 </article>
+                </div>
             </div>
         </div>
     </div>
