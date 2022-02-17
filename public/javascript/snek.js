@@ -1,4 +1,5 @@
 const cvs = document.getElementById('snake');
+let myInterval;
 const ctx = cvs.getContext('2d');
 const box = 32;
 const state = { game: 'play' };
@@ -55,6 +56,8 @@ const score = {
         clickY >= startBtn.y &&
         clickY <= startBtn.y + startBtn.h
       ) {
+        saveScore(score.value);
+        console.log('butt');
         score.reset();
         state.game = 'play';
         snake = [];
@@ -180,10 +183,9 @@ function play() {
     snakeY > 18 * box
   ) {
     state.game = 'over';
-    clearInterval(play);
+    clearInterval(myInterval);
     score.best = Math.max(score.value, score.best);
     document.cookie = `best=${localStorage.getItem('best')}`;
-    saveScore(score.value);
     endGame();
   }
 
@@ -196,14 +198,14 @@ function play() {
 }
 
 function endGame() {
+  console.log('pee');
   ctx.drawImage(ground, 0, 0);
-
   gameOver.draw();
   score.draw();
   score.onClick();
 }
 function loop() {
-  setInterval(play, 400);
+  myInterval = setInterval(play, 400);
 }
 loop();
 
@@ -211,7 +213,7 @@ var savedScores = JSON.parse(localStorage.getItem('snakehighScores')) || [];
 
 function saveScore(currentScore) {
   //captures the value of form input
-
+  console.log('hi');
   //creates object to store initials and score
   var score = {
     score: currentScore,
