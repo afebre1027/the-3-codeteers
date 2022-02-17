@@ -10,7 +10,13 @@ body {
   color: white;
 }
 
-
+.column button {
+  background: none;
+  border: 4px solid hsl(27, 100%, 50%);
+  border-radius: 50%;
+  width: auto;
+  color: white;
+}
 
 .label {
   color: white;
