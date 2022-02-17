@@ -78,28 +78,30 @@
                 <div class="bottom"></div>
             </div>
             <div class="comment-container">
-                {{#each comments as |comment|}}
-                {{>comment-section comment}}
-                {{/each}}
-
-
-                <article class="media">
-
-                    <div class="media-content">
-                        <form id="commentForm">
-                            <div class="field">
-                                <p class="control">
-                                    <textarea class="textarea" name="comment_text" placeholder="Add a comment..."></textarea>
-                                </p>
-                            </div>
-                            <div class="field">
-                                <p class="control">
-                                    <button class="post-button" type="submit">Post comment</button>
-                                </p>
-                            </div>
-                        </form>
-                    </div>
-                </article>
+                <div class="comments">
+                    {{#each comments as |comment|}}
+                    {{>comment-section comment}}
+                    {{/each}}
+    
+    
+                    <article class="media">
+    
+                        <div class="media-content">
+                            <form id="commentForm">
+                                <div class="field">
+                                    <p class="control">
+                                        <textarea class="textarea" name="comment_text" placeholder="Add a comment..."></textarea>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control">
+                                        <button class="post-button" type="submit">Post comment</button>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
     </div>
