@@ -73,7 +73,7 @@ router.get('/floppy', withAuth, (req, res) => {
       where: {
         type: 'floppy',
       },
-      attributes: ['comment_text', 'created_at', 'type'],
+      attributes: ['comment_text', 'created_at'],
       include: [
         {
           model: User,
